@@ -1,4 +1,10 @@
-# Decarb-AI slide template
+# Decarb-AI templates
+
+Decarb-AI house-style templates for research communication. Currently the LaTeX
+Beamer **slide** template below; an HTML **poster** template is in progress. The
+shared brand [palette](PALETTE.md) is at the repo root.
+
+## Slide template
 
 A LaTeX Beamer slide template in the Decarb-AI house style, for talks given
 under the Innovate for Ireland Programme.
@@ -55,3 +61,11 @@ docs/                   README example images
 
 Template code: MIT (see [`LICENSE`](LICENSE)). The Decarb-AI brand assets are
 excluded and remain the property of Decarb-AI / Research Ireland / AIB.
+
+## Palette
+
+The shared Decarb-AI colour palette is in [`PALETTE.md`](PALETTE.md) (brand,
+structure, hazard, and neutral roles, with a drop-in CSS block) and
+[`palette_swatch.png`](palette_swatch.png) as a visual reference.
+
+![Palette](palette_swatch.png)
