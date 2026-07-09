@@ -1,7 +1,7 @@
 # Decarb-AI slide template
 
-A slide template in the Decarb-AI house style — built in LaTeX Beamer — for
-talks given under the Innovate for Ireland Programme.
+A LaTeX Beamer slide template in the Decarb-AI house style, for talks given
+under the Innovate for Ireland Programme.
 
 Decarb-AI is an Innovate for Ireland centre working on AI for decarbonising
 Ireland, jointly funded by Taighde Éireann – Research Ireland and AIB. This
@@ -33,11 +33,11 @@ LaTeX Beamer (16:9) with TikZ. Latin Modern fonts. Compiles with **LuaLaTeX**.
 
 ## What's included
 
-- **Title slide** — logos, title/author/date, cover photo masked to the brand curve
-- **Content slides** — bold headline, spaced bullets, swoosh footer with name and `x/total` page number
-- **Definition / equation block** — tinted panel for a key equation
-- **Conclusions** — differentiated closing slide with the funders repeated (no "thank you" slide)
-- **References** — hanging-indent, auto-breaking for long lists
+- **Title slide** with logos, title/author/date, and a cover photo masked to the brand curve
+- **Content slides** with a bold headline, spaced bullets, and a swoosh footer showing the name and `x/total` page number
+- **Definition/equation block**, a tinted panel for a key equation
+- **Conclusions**, a closing slide set apart by a faint wash with the funders repeated (no "thank you" slide)
+- **References** with hanging indents that break across pages for long lists
 - **Acknowledgement** and **backup/appendix** slides
 
 ## Project structure
