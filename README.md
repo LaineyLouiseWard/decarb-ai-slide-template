@@ -16,18 +16,19 @@ Andrew Parnell's [`aimsir_latex_template`](https://github.com/andrewcparnell/aim
 
 ## Tech stack
 
-LaTeX Beamer (16:9) with TikZ. Latin Modern fonts. Compiles with **LuaLaTeX**.
+LaTeX Beamer (16:9) with TikZ. Latin Modern fonts. Compiles with standard
+pdfLaTeX (LuaLaTeX and XeLaTeX also work). No special engine needed, so it runs
+on Overleaf's default compiler as-is.
 
 ## Getting started
 
 1. Add the brand assets to `assets/` (see [`assets/README.md`](assets/README.md)).
-   They are not shipped with this repo (Decarb-AI copyright).
-2. Compile with LuaLaTeX:
+   They are not shipped with this repo (Decarb-AI copyright). If you are on
+   Decarb-AI, get them from the official Decarb-AI branding pack, or message me.
+2. Compile with pdfLaTeX:
    ```bash
-   latexmk -pdflua main.tex
+   latexmk -pdf main.tex
    ```
-   (pdfLaTeX may fail on some TeX installs with a missing math-font error; use
-   LuaLaTeX.)
 3. Edit `main.tex`: set `\title`, `\author`, `\date`. Swap the cover photo with
    one line: `\renewcommand{\titlephoto}{assets/your-photo.jpg}`.
 
