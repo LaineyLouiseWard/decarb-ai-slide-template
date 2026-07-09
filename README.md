@@ -53,9 +53,3 @@ docs/                   README example images
 
 Template code: MIT (see [`LICENSE`](LICENSE)). The Decarb-AI brand assets are
 excluded and remain the property of Decarb-AI / Research Ireland / AIB.
-
-## Acknowledgement
-
-> This work has emanated from research jointly funded by Taighde Éireann –
-> Research Ireland and by AIB, under the Innovate for Ireland Programme, Grant
-> number 25/I4I-TC/13542.
