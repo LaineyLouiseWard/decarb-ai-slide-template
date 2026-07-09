@@ -7,8 +7,7 @@ Decarb-AI is an Innovate for Ireland centre working on AI for decarbonising
 Ireland, jointly funded by Taighde Éireann – Research Ireland and AIB. This
 template adapts the official Decarb-AI PowerPoint and branding pack into
 Beamer, so slides can be written in LaTeX (equations, figures, references)
-while keeping the official look. Adapted for easier use; structure inspired by
-Andrew Parnell's [`aimsir_latex_template`](https://github.com/andrewcparnell/aimsir_latex_template).
+while keeping the official look. Adapted for easier use.
 
 | Title slide | Definition / equation slide |
 |:---:|:---:|
@@ -23,8 +22,9 @@ on Overleaf's default compiler as-is.
 ## Getting started
 
 1. Add the brand assets to `assets/` (see [`assets/README.md`](assets/README.md)).
-   They are not shipped with this repo (Decarb-AI copyright). If you are on
-   Decarb-AI, get them from the official Decarb-AI branding pack, or message me.
+   They are not shipped with this repo (Decarb-AI copyright). Decarb-AI members
+   already have them in the official branding pack, and they come bundled in the
+   shared Overleaf version.
 2. Compile with pdfLaTeX:
    ```bash
    latexmk -pdf main.tex
