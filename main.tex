@@ -1,0 +1,79 @@
+\documentclass[aspectratio=169,t]{beamer}
+\usepackage{amsmath,amssymb}
+\usetheme{decarb}
+
+% --- Deck metadata --------------------------------------------------------
+\title{Presentation Title}
+\author{Lainey Ward}
+\date{\today}
+
+% To use a different title-slide photo, uncomment and point at your file:
+% \renewcommand{\titlephoto}{assets/photo-2.jpg}
+
+\begin{document}
+
+% ---- Title slide ---------------------------------------------------------
+\maketitleframe
+
+% ---- Content slide: short phrases, not paragraphs -------------------------
+\begin{frame}{Headline}
+  \begin{itemize}
+    \item Short phrases, not sentences
+    \item One idea per line
+    \item Let the figure carry the detail
+    \begin{itemize}
+      \item Supporting point, kept brief
+    \end{itemize}
+    \item Say the rest out loud
+  \end{itemize}
+\end{frame}
+
+% ---- Definition / equation block (one of my S2S_AI verification metrics) --
+\begin{frame}{A definition block}
+  \begin{block}{CRPS --- Continuous Ranked Probability Score}
+    How well the full forecast distribution matches the observed value:
+    \[
+      \mathrm{CRPS} = \int_{-\infty}^{\infty}\bigl[F(x) - H(x-y)\bigr]^2\,dx
+    \]
+    \begin{itemize}
+      \item $F(x)$ forecast CDF; \; $H(x-y)$ step at the observation $y$
+      \item Lower is better; reduces to $|f-y|$ for a deterministic forecast
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+% ---- Conclusions (differentiated closing slide; funders repeated) ---------
+\begin{conclusions}[Conclusions]
+  \begin{itemize}
+    \item First takeaway in a single line
+    \item Second takeaway, equally short
+    \item What it means / what comes next
+  \end{itemize}
+\end{conclusions}
+
+% ---- Funding acknowledgement (kept for the record; not usually shown) -----
+\begin{frame}{Acknowledgement}
+  \vspace{1.5em}
+  This presentation has emanated from research jointly funded by
+  Taighde Éireann~--~Research Ireland and by AIB, under the Innovate for
+  Ireland Programme, Grant number~25/I4I-TC/13542.
+\end{frame}
+
+% ---- References -----------------------------------------------------------
+\begin{frame}[allowframebreaks]{References}
+  \footnotesize
+  \setlength{\parskip}{0.7em}\setlength{\parindent}{0pt}
+  \newcommand{\refentry}{\par\hangindent=1.4em\hangafter=1\relax}
+  \refentry Author, A., \& Author, B. (2024). Title of the referenced work.
+       \textit{Journal Name}, 12(3), 45--67.
+  \refentry Author, C. (2023). Another referenced work with a longer title that
+       wraps onto a second line. \textit{Publisher}.
+\end{frame}
+
+% ---- Backup / appendix (excluded from the x/total slide count) ------------
+\appendix
+\begin{frame}{Backup}
+  Extra material to pull up during questions.
+\end{frame}
+
+\end{document}

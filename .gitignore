@@ -1,0 +1,19 @@
+# Decarb-AI brand assets — copyrighted, not redistributable (see assets/README.md)
+assets/*
+!assets/README.md
+
+# LaTeX build artefacts
+*.aux
+*.log
+*.nav
+*.snm
+*.toc
+*.out
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.synctex.gz
+main.pdf
+pv-*.png
+build*.log

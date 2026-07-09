@@ -1,0 +1,151 @@
+% Decarb-AI-inspired Beamer theme (LaTeX font), built for Lainey's talks.
+% Style inspiration from the official Decarb-AI deck; our own beamer versions.
+\mode<presentation>
+
+\RequirePackage{tikz}
+\RequirePackage{graphicx}
+\RequirePackage{etoolbox}
+\usetikzlibrary{calc}
+
+% ---- Breathe: more space between bullets ---------------------------------
+\apptocmd{\itemize}{\itemsep0.8em}{}{}
+\apptocmd{\enumerate}{\itemsep0.8em}{}{}
+
+% ---- Brand palette (sampled from the Decarb-AI swoosh) -------------------
+\definecolor{decarbblue}{RGB}{67,102,174}   % dark blue  (swoosh left)
+\definecolor{decarbcyan}{RGB}{56,187,236}   % cyan       (swoosh middle)
+\definecolor{decarbgreen}{RGB}{130,192,70}  % green      (swoosh right)
+\definecolor{decarbink}{RGB}{26,26,26}      % near-black headline
+\definecolor{decarbgrey}{RGB}{110,110,110}  % muted grey
+
+% ---- Fonts: standard LaTeX look ------------------------------------------
+\RequirePackage{lmodern}
+\usefonttheme{default}                       % Latin Modern sans
+\setbeamerfont{frametitle}{series=\bfseries, size=\LARGE}
+\setbeamerfont{title}{series=\bfseries}
+
+% ---- Colours -------------------------------------------------------------
+\setbeamercolor{normal text}{fg=decarbink, bg=white}
+\setbeamercolor{frametitle}{fg=decarbink}
+\setbeamercolor{structure}{fg=decarbcyan}
+\setbeamercolor{itemize item}{fg=decarbcyan}
+\setbeamercolor{itemize subitem}{fg=decarbgreen}
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{frametitle continuation}{}   % no "I/II" on broken frames (e.g. References)
+
+% Tinted blocks (used to set apart a Conclusions/Summary panel)
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamercolor{block title}{bg=decarbcyan!20, fg=decarbink}
+\setbeamercolor{block body}{bg=decarbcyan!7, fg=decarbink}
+\setbeamerfont{block title}{series=\bfseries}
+
+% ---- Asset paths (edit here if you move the folder) ----------------------
+\newcommand{\decarbbar}{assets/bar-bottom.png}       % bottom swoosh (content slides)
+\newcommand{\decarbtitlebg}{assets/bg-title.png}     % title frame: white + curve + swoosh, photo-hole transparent
+\newcommand{\decarblogos}{assets/logos-strip.png}
+% Default title-slide photo. Override per deck with \renewcommand.
+\newcommand{\titlephoto}{assets/photo-1.jpg}
+
+% ==========================================================================
+% Bottom swoosh, drawn full width across the base of a slide.
+% Use inside a tikzpicture with (shift to page SW, x=\paperwidth, y=\paperheight).
+% ==========================================================================
+\newcommand{\decarbbaronly}{%
+  \node[anchor=south west, inner sep=0] at (0,0)
+    {\includegraphics[width=\paperwidth]{\decarbbar}};%
+}
+
+% Footer text sitting on the swoosh: name (left) + page number (pulled left,
+% before the green up-sweep). White for contrast against the coloured bar.
+% Shared left margin: the left edge of the Decarb mark inside the logo strip.
+\newcommand{\decarbleft}{0.059}
+
+\newcommand{\decarbfooter}{%
+  \node[anchor=west, inner sep=0, text=white] at (\decarbleft,0.026)
+    {\footnotesize\insertshorttitle};%
+  \node[anchor=east, inner sep=0, text=white] at (0.84,0.026)
+    {\footnotesize\insertframenumber\,/\,\inserttotalframenumber};%
+}
+
+% ==========================================================================
+% Frame title: bold black, aligned to the shared left margin (\decarbleft),
+% so headlines line up with the title-slide title.
+% ==========================================================================
+\setbeamersize{text margin left=\decarbleft\paperwidth, text margin right=0.045\paperwidth}
+\setbeamertemplate{frametitle}{%
+  \vskip 0.9em
+  \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle%
+  \vskip 1.8em   % breathing room so content sits a little lower
+}
+
+% Footer space is handled by the swoosh in the background; keep footline empty.
+\setbeamertemplate{footline}{\vskip0pt}
+
+% ---- Default background for content slides: swoosh + footer ---------------
+\setbeamertemplate{background}{%
+  \begin{tikzpicture}[remember picture, overlay,
+      shift={(current page.south west)}, x=\paperwidth, y=\paperheight]
+    \decarbbaronly
+    \decarbfooter
+  \end{tikzpicture}%
+}
+
+% ==========================================================================
+% TITLE FRAME
+% White left panel with logos + title + author; photo clipped to a curved
+% right panel that fills the whole lower-right so the swoosh sits on the
+% photo (no white gap). Photo is one swappable file.
+% ==========================================================================
+\newcommand{\maketitleframe}{{%
+  \setbeamertemplate{background}{%
+    \begin{tikzpicture}[remember picture, overlay,
+        shift={(current page.south west)}, x=\paperwidth, y=\paperheight]
+      % --- photo, full height on the right; the title element masks it ---
+      \node[anchor=east, inner sep=0] at (1,0.5)
+        {\includegraphics[height=\paperheight]{\titlephoto}};
+      % --- their real title element: opaque white left, transparent photo
+      %     hole (exact curve), opaque swoosh. Drawn on top to mask the photo.
+      \node[anchor=south west, inner sep=0] at (0,0)
+        {\includegraphics[width=\paperwidth,height=\paperheight]{\decarbtitlebg}};
+      % --- logo strip, top-left (mark left edge = \decarbleft) ---
+      \node[anchor=north west, inner sep=0] at (0.045,0.955)
+        {\includegraphics[width=0.60\paperwidth]{\decarblogos}};
+      % --- title / author / date, all left-aligned to \decarbleft ---
+      \node[anchor=north west, inner sep=0, text width=0.42\paperwidth, align=left]
+        at (\decarbleft,0.70)
+        {\usebeamerfont{title}\color{decarbink}\fontsize{30}{34}\selectfont\inserttitle};
+      \node[anchor=north west, inner sep=0] at (\decarbleft,0.30)
+        {\color{decarbink}\Large\insertauthor};
+      \ifx\insertdate\empty\else
+        \node[anchor=north west, inner sep=0] at (\decarbleft,0.235)
+          {\color{decarbgrey}\normalsize\insertdate};
+      \fi
+    \end{tikzpicture}%
+  }%
+  \begin{frame}[plain]\end{frame}
+}}
+
+% ==========================================================================
+% CONCLUSIONS FRAME
+% Differentiated closing slide: faint brand wash + swoosh + footer, with the
+% funder logos repeated across the bottom. No "thank you" slide.
+%   \begin{conclusions}[Conclusions] ... bullets ... \end{conclusions}
+% ==========================================================================
+\newenvironment{conclusions}[1][Conclusions]{%
+  \setbeamertemplate{background}{%
+    \begin{tikzpicture}[remember picture, overlay,
+        shift={(current page.south west)}, x=\paperwidth, y=\paperheight]
+      \fill[decarbcyan!7] (0,0) rectangle (1,1);          % faint wash
+      \decarbbaronly
+      \decarbfooter
+      \node[anchor=south east, inner sep=0] at (0.965,0.105) % funders, down-right, above the swoosh
+        {\includegraphics[width=0.60\paperwidth]{\decarblogos}};
+    \end{tikzpicture}%
+  }%
+  \begin{frame}{#1}%
+}{%
+  \end{frame}%
+}
+
+\mode<all>
