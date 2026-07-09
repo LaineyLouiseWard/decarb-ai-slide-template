@@ -20,7 +20,7 @@ LaTeX Beamer (16:9) with TikZ. Latin Modern fonts. Compiles with **LuaLaTeX**.
 
 ## Getting started
 
-1. Add the brand assets to `assets/` — see [`assets/README.md`](assets/README.md).
+1. Add the brand assets to `assets/` (see [`assets/README.md`](assets/README.md)).
    They are not shipped with this repo (Decarb-AI copyright).
 2. Compile with LuaLaTeX:
    ```bash
@@ -44,7 +44,7 @@ LaTeX Beamer (16:9) with TikZ. Latin Modern fonts. Compiles with **LuaLaTeX**.
 
 ```
 beamerthemedecarb.sty   the theme (palette, layouts, title/conclusions/footer)
-main.tex                example deck — edit this
+main.tex                example deck you edit
 assets/                 brand assets (gitignored; see assets/README.md)
 docs/                   README example images
 ```
