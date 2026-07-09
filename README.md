@@ -23,8 +23,9 @@ on Overleaf's default compiler as-is.
 
 1. Add the brand assets to `assets/` (see [`assets/README.md`](assets/README.md)).
    They are not shipped with this repo (Decarb-AI copyright). Decarb-AI members
-   already have them in the official branding pack, and they come bundled in the
-   shared Overleaf version.
+   can get the ready-to-use version, with the assets already in place, as a
+   private Overleaf template (reach out for access), or take the assets from the
+   official Decarb-AI branding pack.
 2. Compile with pdfLaTeX:
    ```bash
    latexmk -pdf main.tex
