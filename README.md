@@ -1,7 +1,7 @@
-# Decarb-AI Beamer template
+# Decarb-AI slide template
 
-A LaTeX Beamer template in the Decarb-AI house style for talks given under the
-Innovate for Ireland Programme.
+A slide template in the Decarb-AI house style — built in LaTeX Beamer — for
+talks given under the Innovate for Ireland Programme.
 
 Decarb-AI is an Innovate for Ireland centre working on AI for decarbonising
 Ireland, jointly funded by Taighde Éireann – Research Ireland and AIB. This
