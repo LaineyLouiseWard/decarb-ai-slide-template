@@ -7,8 +7,8 @@ Decarb-AI is an Innovate for Ireland centre working on AI for decarbonising
 Ireland, jointly funded by Taighde Éireann – Research Ireland and AIB. This
 template adapts the official Decarb-AI PowerPoint and branding pack into
 Beamer, so slides can be written in LaTeX (equations, figures, references)
-while keeping the official look. Designed by Lainey Ward; inspired in structure
-by Andrew Parnell's [`aimsir_latex_template`](https://github.com/andrewcparnell/aimsir_latex_template).
+while keeping the official look. Adapted for easier use; structure inspired by
+Andrew Parnell's [`aimsir_latex_template`](https://github.com/andrewcparnell/aimsir_latex_template).
 
 | Title slide | Definition / equation slide |
 |:---:|:---:|
